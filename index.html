@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fynally.io - Your Life Companion for Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .step-item.active .step-circle {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            transform: scale(1.1);
+        }
+        .step-item.active .step-title {
+            color: #4f46e5; /* indigo-600 */
+            font-weight: 700;
+        }
+        .step-line {
+            height: 2px;
+            background-color: #e2e8f0; /* slate-200 */
+        }
+        .step-item.active ~ .step-item .step-circle {
+            background-color: #e2e8f0; /* slate-200 */
+        }
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">Fynally.io</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#student" class="text-slate-600 hover:text-indigo-600 transition-colors">Student</a>
+                <a href="#learner" class="text-slate-600 hover:text-indigo-600 transition-colors">Learner</a>
+                <a href="#intern" class="text-slate-600 hover:text-indigo-600 transition-colors">Intern</a>
+                <a href="#employee" class="text-slate-600 hover:text-indigo-600 transition-colors">Employee</a>
+            </div>
+            <a href="#" class="hidden md:block bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition-transform hover:scale-105">Get Started</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#student" class="block py-2 text-slate-600 hover:text-indigo-600">Student</a>
+            <a href="#learner" class="block py-2 text-slate-600 hover:text-indigo-600">Learner</a>
+            <a href="#intern" class="block py-2 text-slate-600 hover:text-indigo-600">Intern</a>
+            <a href="#employee" class="block py-2 text-slate-600 hover:text-indigo-600">Employee</a>
+            <a href="#" class="block mt-2 bg-indigo-600 text-white text-center px-5 py-2 rounded-lg hover:bg-indigo-700">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-white">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <div class="absolute inset-0 bg-[url('https://placehold.co/1200x800/e0e7ff/4f46e5?text=Growth+Path')] bg-cover bg-center opacity-10"></div>
+                <div class="relative">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-800 leading-tight fade-in">Your Journey, <span class="text-indigo-600">Finally</span> Realized.</h1>
+                    <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto fade-in" style="transition-delay: 100ms;">Fynally is your life companion, guiding you through every step of your career path, from the classroom to the corner office.</p>
+                    <a href="#student" class="mt-8 inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-transform hover:scale-105 shadow-lg fade-in" style="transition-delay: 200ms;">Start Your Journey</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Navigation -->
+        <section class="bg-slate-50/80 backdrop-blur-lg py-8 sticky top-[72px] z-40 border-b border-slate-200">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-slate-800 mb-8">Follow Your Pathway</h2>
+                <div class="flex justify-between items-start max-w-4xl mx-auto">
+                    <a href="#student" class="step-item text-center w-1/4" data-section="student">
+                        <div class="step-circle mx-auto w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-xl font-bold text-slate-500 transition-all duration-300">1</div>
+                        <p class="step-title mt-2 text-sm md:text-base font-semibold text-slate-500 transition-colors">Student</p>
+                    </a>
+                    <div class="step-line flex-grow mt-6"></div>
+                    <a href="#learner" class="step-item text-center w-1/4" data-section="learner">
+                        <div class="step-circle mx-auto w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-xl font-bold text-slate-500 transition-all duration-300">2</div>
+                        <p class="step-title mt-2 text-sm md:text-base font-semibold text-slate-500 transition-colors">Learner</p>
+                    </a>
+                    <div class="step-line flex-grow mt-6"></div>
+                    <a href="#intern" class="step-item text-center w-1/4" data-section="intern">
+                        <div class="step-circle mx-auto w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-xl font-bold text-slate-500 transition-all duration-300">3</div>
+                        <p class="step-title mt-2 text-sm md:text-base font-semibold text-slate-500 transition-colors">Intern</p>
+                    </a>
+                    <div class="step-line flex-grow mt-6"></div>
+                    <a href="#employee" class="step-item text-center w-1/4" data-section="employee">
+                        <div class="step-circle mx-auto w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-xl font-bold text-slate-500 transition-all duration-300">4</div>
+                        <p class="step-title mt-2 text-sm md:text-base font-semibold text-slate-500 transition-colors">Employee</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Sections Wrapper -->
+        <div class="container mx-auto px-6 py-16 md:py-24 space-y-24 md:space-y-32">
+
+            <!-- Section 1: Student -->
+            <section id="student" class="scroll-mt-48">
+                <div class="text-center mb-12">
+                    <span class="text-indigo-600 font-semibold">Step 1</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2">Student Resources</h2>
+                    <p class="mt-3 text-lg text-slate-500 max-w-2xl mx-auto">Build a strong foundation with resources tailored for academic success.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="book-open-check"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Scholarship Finder</h3>
+                        <p class="mt-2 text-slate-500">Access a curated database of scholarships to fund your education and reduce financial burden.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 100ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="microscope"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Research Assistance</h3>
+                        <p class="mt-2 text-slate-500">Get tools and guides to help you with your academic research projects and papers.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 200ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="presentation"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Campus Groups</h3>
+                        <p class="mt-2 text-slate-500">Connect with like-minded peers, join clubs, and enhance your university experience.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Learner -->
+            <section id="learner" class="scroll-mt-48">
+                <div class="text-center mb-12">
+                    <span class="text-indigo-600 font-semibold">Step 2</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2">Continuous Learning</h2>
+                    <p class="mt-3 text-lg text-slate-500 max-w-2xl mx-auto">Acquire in-demand skills and certifications to stand out in the competitive market.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="award"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Skill Courses</h3>
+                        <p class="mt-2 text-slate-500">Enroll in expert-led courses on everything from coding to digital marketing.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 100ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="code-2"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Coding Bootcamps</h3>
+                        <p class="mt-2 text-slate-500">Intensive, project-based bootcamps to fast-track your career in tech.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 200ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="shield-check"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Certification Prep</h3>
+                        <p class="mt-2 text-slate-500">Prepare and pass industry-recognized certifications with our targeted study guides.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Intern -->
+            <section id="intern" class="scroll-mt-48">
+                <div class="text-center mb-12">
+                    <span class="text-indigo-600 font-semibold">Step 3</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2">Internship Opportunities</h2>
+                    <p class="mt-3 text-lg text-slate-500 max-w-2xl mx-auto">Gain practical, real-world experience to bridge the gap between theory and practice.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="briefcase"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Internship Market</h3>
+                        <p class="mt-2 text-slate-500">Find exclusive internship openings at top companies and innovative startups.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 100ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="file-text"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Resume Builder</h3>
+                        <p class="mt-2 text-slate-500">Craft a professional, eye-catching resume with our easy-to-use templates and tips.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 200ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="users"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Interview Prep</h3>
+                        <p class="mt-2 text-slate-500">Ace your interviews with mock sessions, common questions, and expert feedback.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Employee -->
+            <section id="employee" class="scroll-mt-48">
+                <div class="text-center mb-12">
+                    <span class="text-indigo-600 font-semibold">Step 4</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2">Employment & Growth</h2>
+                    <p class="mt-3 text-lg text-slate-500 max-w-2xl mx-auto">Land your dream job and continue to grow throughout your professional career.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="search"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Curated Job Board</h3>
+                        <p class="mt-2 text-slate-500">Explore job postings from leading companies, tailored to your skills and preferences.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 100ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="trending-up"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Career Growth Tools</h3>
+                        <p class="mt-2 text-slate-500">Plan your next move with tools for skill gap analysis and career path mapping.</p>
+                    </div>
+                    <div class="section-card bg-white p-8 rounded-xl shadow-md border border-slate-200/50 fade-in" style="transition-delay: 200ms;">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center"><i data-lucide="network"></i></div>
+                        <h3 class="text-xl font-bold mt-4 text-slate-800">Professional Network</h3>
+                        <p class="mt-2 text-slate-500">Connect with mentors and industry professionals to expand your network and knowledge.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white">Fynally.io</h3>
+                    <p class="mt-2 text-slate-400">Your companion for growth, from student to employee.</p>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="font-semibold text-white">Pathway</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="#student" class="hover:text-indigo-400">Student</a></li>
+                            <li><a href="#learner" class="hover:text-indigo-400">Learner</a></li>
+                            <li><a href="#intern" class="hover:text-indigo-400">Intern</a></li>
+                            <li><a href="#employee" class="hover:text-indigo-400">Employee</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white">Resources</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="#" class="hover:text-indigo-400">Blog</a></li>
+                            <li><a href="#" class="hover:text-indigo-400">Guides</a></li>
+                            <li><a href="#" class="hover:text-indigo-400">Community</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white">Company</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="#" class="hover:text-indigo-400">About Us</a></li>
+                            <li><a href="#" class="hover:text-indigo-400">Careers</a></li>
+                            <li><a href="#" class="hover:text-indigo-400">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white">Legal</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="#" class="hover:text-indigo-400">Privacy</a></li>
+                            <li><a href="#" class="hover:text-indigo-400">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-sm text-slate-400">&copy; 2025 Fynally.io. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for animations and active step tracking
+        const sections = document.querySelectorAll('section[id]');
+        const stepItems = document.querySelectorAll('.step-item');
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3 // 30% of the section is visible
+        };
+
+        const animationObserverOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        // Observer for updating the active step in the journey navigation
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    stepItems.forEach(item => {
+                        if (item.dataset.section === sectionId) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Observer for fade-in animations
+        const animationObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, animationObserverOptions);
+
+        fadeInElements.forEach(el => {
+            animationObserver.observe(el);
+        });
+
+        // Set initial state on load
+        window.addEventListener('load', () => {
+             // Manually activate first step if at top of page
+            if(window.scrollY < 200) {
+                 document.querySelector('.step-item[data-section="student"]').classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
